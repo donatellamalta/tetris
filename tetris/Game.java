@@ -22,6 +22,7 @@ public class Game extends KeyAdapter {
     private static final long FPS_LIMIT = 90;
     private static final long MIN_LOOP_DURATION_MS = 1000 / FPS_LIMIT;
     DrawingCanvas c;
+    DrawingCanvas g;
 
     /**
      * @param args the command line arguments
@@ -61,6 +62,7 @@ public class Game extends KeyAdapter {
 
     // The whole game logic is down here
     private static final int MAX_X = 13;
+    private static final int MAX_Y = 14;
     private static final int INITIAL_PIECE_X = 6;
     private static final int INITIAL_PIECE_Y = 14;
 
@@ -118,9 +120,12 @@ public class Game extends KeyAdapter {
                 current.setMoving(false);
                 tetrominos.add(current);
                 current = newRandomTetromino();
-                deleteLine();
-               
-                
+
+                if(fullFrame(tetrominos.get(tetrominos.size()-1))){
+                    System.out.println("Game over");
+                }else{
+                   deleteLine(); 
+                }
                 
 
             }
@@ -162,8 +167,9 @@ public class Game extends KeyAdapter {
         return t;
     }
 
+
     private boolean hasDown(Tetromino t) {
-        // Se ha un pezzo sull'ultima riga, allora non può scendere
+        // Se ha un pezzo sull'ultima riga, allora non può scendere (è nella parte più in basso)
         if (t.numPiecesOnLine(0) > 0) {
             return false;
         }
@@ -266,5 +272,18 @@ public class Game extends KeyAdapter {
         }
     }
     
+    private boolean fullFrame(Tetromino t) {
+        List<Piece> mypieces = t.getPieces();
+        for (Piece p : mypieces) {
+            if (p.getY() >= MAX_Y) {
+                System.out.println("Full");
+                return true;
+            }
+        }
+        return false;
+    }
+
+    
+
     
 }
