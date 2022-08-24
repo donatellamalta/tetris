@@ -22,7 +22,6 @@ public class Game extends KeyAdapter {
     private static final long FPS_LIMIT = 90;
     private static final long MIN_LOOP_DURATION_MS = 1000 / FPS_LIMIT;
     DrawingCanvas c;
-    DrawingCanvas g;
 
     /**
      * @param args the command line arguments
