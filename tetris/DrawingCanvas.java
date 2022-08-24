@@ -8,6 +8,7 @@ package tetris;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
@@ -97,13 +98,21 @@ public class DrawingCanvas extends Canvas {
         return DEFAULT_SCREEN_HEIGHT/GRID_RESOLUTION;
     }
     
-    public void draw(Sprite s, int x, int y){
+    public void draw(Sprite s, int x, int y) {
         Graphics2D g = (Graphics2D) buffer.getDrawGraphics();
-        y+=1;
-        y*=GRID_RESOLUTION;
-        x*=GRID_RESOLUTION;
-        s.draw(g, x, screenHeight-y, GRID_RESOLUTION, GRID_RESOLUTION);
+        y += 1;
+        y *= GRID_RESOLUTION;
+        x *= GRID_RESOLUTION;
+        s.draw(g, x, screenHeight - y, GRID_RESOLUTION, GRID_RESOLUTION);
     }
+
+    public void drawText(String text, Color color, int size, int x, int y) {
+        Graphics2D g = (Graphics2D) buffer.getDrawGraphics();
+        g.setColor(Color.red);
+        g.setFont(new Font("Bold", 1, size));
+        g.drawString(text, x, y);
+    }
+
     public void clear(){
         Graphics2D g = (Graphics2D) buffer.getDrawGraphics();
         g.setColor(Color.BLACK);
