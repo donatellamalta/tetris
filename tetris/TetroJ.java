@@ -1,15 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tetris;
-import java.util.*;
 
-/**
- *
- * @author Donatella Malta
- */
 public class TetroJ extends Tetromino{
     public TetroJ(int defx, int defy){
         Piece p1 = new Piece(defx, defy-1); //pezzo centrale
