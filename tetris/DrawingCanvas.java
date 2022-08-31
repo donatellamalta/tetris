@@ -9,6 +9,7 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
@@ -109,8 +110,9 @@ public class DrawingCanvas extends Canvas {
     public void drawText(String text, Color color, int size, int x, int y) {
         Graphics2D g = (Graphics2D) buffer.getDrawGraphics();
         g.setColor(Color.red);
-        g.setFont(new Font("Bold", 1, size));
-        g.drawString(text, x, y);
+        g.setFont(new Font("Staatliches", Font.BOLD, 75));
+        FontMetrics metrics_game = getFontMetrics(g.getFont());
+        g.drawString(text, (x - metrics_game.stringWidth(text)) / 2, y / 2);
     }
 
     public void clear(){

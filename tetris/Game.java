@@ -33,8 +33,8 @@ public class Game {
 
     private void run() {
         long lastLoopTime = System.currentTimeMillis() - 1;
-        state = new GameOverState(this, c);
-        //state = new PlayingState(this, c);
+        //state = new GameOverState(this, c); //to test only the game over display
+        state = new PlayingState(this, c);
 
         while (gameRunning) {
             long curTime = System.currentTimeMillis();

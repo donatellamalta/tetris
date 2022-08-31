@@ -11,7 +11,11 @@ public class GameOverState implements GameState{
     }
    
     public void gameLoop(long delta) {
-        c.drawText("GAME OVER", Color.red, 20, 50, 50);
+
+        c.drawText("GAME OVER", Color.red, 20, c.getWidth(), c.getHeight());
+
+
+        
     }
 
 }
