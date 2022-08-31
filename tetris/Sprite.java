@@ -1,28 +1,19 @@
 package tetris;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.geom.AffineTransform;
-import java.util.HashMap;
-import java.util.Map;
-
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
-import java.awt.Image;
 import java.awt.Transparency;
 import java.awt.image.BufferedImage;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.imageio.ImageIO;
 
-/**
- * 
- *
- */
 public class Sprite {
     
     

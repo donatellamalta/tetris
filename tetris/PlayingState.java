@@ -4,8 +4,6 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
-import java.util.TreeSet;
 import java.awt.event.KeyAdapter;
 
 public class PlayingState extends KeyAdapter implements GameState {
